@@ -5,6 +5,7 @@ app = Flask(__name__)
 def hola():
     return 'Hello World'
 
-@app.route("/Daighax")
+@app.route("/chau")
 def chau():
-    return 'I hate niggers'
+    return 'Chau'
+
