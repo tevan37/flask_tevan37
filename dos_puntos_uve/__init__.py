@@ -13,15 +13,16 @@ def hola():
 def chau():
     return 'Chau'
 
-@app.route("/generos")
-def generos():
+@app.route("/peliculas")
+def peliculas():
     consulta = """
-        SELECT name FROM genres
-        ORDER BY name;
+        SELECT title FROM film
+        ORDER BY title;
     """
     con = db.get_db()
     res = con.execute(consulta)
-    lista_generos = res.fetchall()
-    pagina = render_template('generos.html',
-                             generos=lista_generos)
+    lista_peliculas = res.fetchall()
+    pagina = render_template('film.html',
+                             peliculas=lista_peliculas)
     return pagina
+
